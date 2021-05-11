@@ -1,57 +1,74 @@
-/* Ubicacion de la imagen en la pagina principal*/
-#ImagenBart{
-    width: 40px;
-    float: left;
-    margin-left: 30px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Ubicacion del titulo en la pagina principal */
-#titulo{
-    float: right;
+body {
+    font-family: 'Tajawal', sans-serif;
 }
 
-/* Boton "Que es" */
-a:link, a:visited{
-    color: #4d5358;
+.todo {
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
 }
-a:hover{
-    font-size: 1.4em;
+
+.titulo {
+    color: black;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/*Header*/
+header {
+    width: 100%;
+    height: 600px;
+    background: rgba(41, 128, 185, 0.5);
+    background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(109, 213, 250, 0.5), rgba(41, 128, 185, 0.5)), url("imagenes/hombre.jpg");
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(109, 213, 250, 0.5), rgba(41, 128, 185, 0.5)), url("imagenes/hombre.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+nav{
+    text-align: center;
+    padding: 30px 50px 0 0;
+}
+nav > a:link,a:visited{
+    color: #000;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 40px;
+}
+nav > a:hover{
+    text-decoration: underline;
+    font-size: 1.2em;
 }
 a:active{
     font-weight: bold;
 }
-
-/* Estilo de los titulos y todo el cuerpo de la pagina */
-header{
-    font-family: 'Tahoma', sans-serif;
-    color: black;
-}
-
-/* Estilo del titulo de la Explicacion Teorica */
-h2{
-    font-size: 70px;
-}
-
-/* Estilo de la EExplicacion teorica */
-#TitulosTeoria{
-    font-size: 20px;
-    background-color: #fffc00;
-}
-
-body{
-    font-family: 'Tahoma', sans-serif;
-    color: black;
-    margin: 40px;
+header .CaidaLibreHeader{
+    display: flex;
+    height: 450px;
     width: 100%;
-    height: 100vh;
-    background: lightblue;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
-h1,a{
-    background: lightblue;
-    text-align: right;
-    margin: 40px;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: black;
+.CaidaLibreHeader h1{
     font-size: 80px;
+    color: #000000;
+    font-weight: bolder;
 }
 
+
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
