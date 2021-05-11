@@ -8,7 +8,7 @@ lo aprendido previamente en la parte teórica.
 
 ## Tecnologías Usadas
 * HTML5
-* CSS3
+* CSS3 
 
 
 
