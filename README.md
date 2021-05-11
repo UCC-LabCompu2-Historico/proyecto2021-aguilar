@@ -1,11 +1,11 @@
-# Caida Libre
-Esta es una pagina que te da un vistazon general a la unidad de Caida Libre de Fisica 1.
-Se pueden encontrar una explicacion teorica y despues de eso se puede realizar un ejercicio aplicando lo aprendido previamente en la parte toerica.
+# Caída Libre
+Esta es una página que te da un vistazo general a la unidad de Caída Libre de Física I.
+Se pueden encontrar una explicación teórica y al mismo tiempo se puede realizar un ejercicio aplicando lo aprendido previamente en la parte teórica.
 
 ## Autor:
 * Aguilar,  Belen
 
-## Tecnologias usadas
+## Tecnologías Usadas
 * HTML5
 * CSS3
 
@@ -20,10 +20,10 @@ Se pueden encontrar una explicacion teorica y despues de eso se puede realizar u
 - [ ] Modificar el Readme.MD y colocar información del proyecto/página (mínimamente: título del proyecto, autores, link de gh-pages, contenido de la página,  listado de tecnologías usadas, etc)
 - [ ] Publicar la Web empleando GitHubPages
 - [x] La estructura de la página debe estar definida con ```<div></div>```
-- [ ] Debe contener al menos 3 elementos de tipo ```<input>``` o ```<select>``` ó ```<button>``` que le permitan al usuario ingresar valores para poder realizar un cálculo de un ejercicio.
+- [x] Debe contener al menos 3 elementos de tipo ```<input>``` o ```<select>``` ó ```<button>``` que le permitan al usuario ingresar valores para poder realizar un cálculo de un ejercicio.
 - [x] Debe haber por lo menos una etiqueta ```<img>``` en la página.
 - [x] La estructura del proyecto debe ser adecuada (crear una carpeta para las imágenes, otra para los sketch/mockups). Es importante que contenga SKETCH y MOCKUP
-- [ ] Debe contener un ```<canvas>```, para que posteriormente (en la 2da etapa) se grafique alguna imagen representativa del ejercicio. (el desarrollo del gráfico se realizará cuando se vea la unidad de “Orientación a Eventos”)
+- [x] Debe contener un ```<canvas>```, para que posteriormente (en la 2da etapa) se grafique alguna imagen representativa del ejercicio. (el desarrollo del gráfico se realizará cuando se vea la unidad de “Orientación a Eventos”)
 - [x] Identar correctamente el código (en Webstorm Ctrl+Alt+L)
 - [x] No espaciar con excesivos ```<br>```. Utilizar márgenes, paddings, etc.
 - [x] No utilizar etiquetas deprecadas.
@@ -37,8 +37,8 @@ Se pueden encontrar una explicacion teorica y despues de eso se puede realizar u
 
 Accesibilidad:
 - [x] Toda imagen debe tener su etiqueta alt
-- [ ] Todo ```<input>``` o ```<select>``` debe tener su ```<label>```
-- [ ] Los labels deben contener el atributo **for** (el for debe contener el id del input al cual se referencia) 
+- [x] Todo ```<input>``` o ```<select>``` debe tener su ```<label>```
+- [x] Los labels deben contener el atributo **for** (el for debe contener el id del input al cual se referencia) 
 - [x] Si hay una tabla en la página, debe contener ```<caption></caption>```
 
 ### Requisitos del Segundo Parcial
