@@ -2,7 +2,7 @@
 Esta es una página que te da un vistazo general a la unidad de Caída Libre de Física I.
 Se pueden encontrar una explicación teórica y al mismo tiempo se puede realizar un ejercicio aplicando lo aprendido previamente en la parte teórica.
 
-Link al sitio: [Caída Libre] (https://ucc-labcompu2.github.io/proyecto2021-aguilar/)
+Link al sitio: [Caída Libre](https://ucc-labcompu2.github.io/proyecto2021-aguilar/)
 
 ## Autor:
 * Aguilar,  Belen
