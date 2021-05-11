@@ -1,3 +1,57 @@
-h1{
+/* Ubicacion de la imagen en la pagina principal*/
+#ImagenBart{
+    width: 40px;
+    float: left;
+    margin-left: 30px;
+}
+
+/* Ubicacion del titulo en la pagina principal */
+#titulo{
+    float: right;
+}
+
+/* Boton "Que es" */
+a:link, a:visited{
+    color: #4d5358;
+}
+a:hover{
+    font-size: 1.4em;
+}
+a:active{
+    font-weight: bold;
+}
+
+/* Estilo de los titulos y todo el cuerpo de la pagina */
+header{
+    font-family: 'Tahoma', sans-serif;
     color: black;
 }
+
+/* Estilo del titulo de la Explicacion Teorica */
+h2{
+    font-size: 70px;
+}
+
+/* Estilo de la EExplicacion teorica */
+#TitulosTeoria{
+    font-size: 20px;
+    background-color: #fffc00;
+}
+
+body{
+    font-family: 'Tahoma', sans-serif;
+    color: black;
+    margin: 40px;
+    width: 100%;
+    height: 100vh;
+    background: lightblue;
+}
+h1,a{
+    background: lightblue;
+    text-align: right;
+    margin: 40px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: black;
+    font-size: 80px;
+}
+
