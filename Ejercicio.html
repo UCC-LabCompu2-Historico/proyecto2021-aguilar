@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
     <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta content="Belen Aguilar" name="autor">
@@ -39,33 +38,60 @@
     </div>
 </header>
 
-<section>
+<section class="ElProblema">
     <div class="ejercicio">
         <h2 class="titulo">Ejercicio</h2>
-        <div class="enunciado">
-            <div class="datos">
+        <div class="problema">
+            <div class="enunciado">
                 <p>
-                    datos...
+                    Se deja caer un objeto desde una altura determinada.Para <b>calcular el tiempo</b> que tarda
+                    en caer el objeto, usted debera ingresar <b>H</b> (Altura),<b>g</b> (Gravedad) y la <b>V</b> (Velocidad Final).
+                </p>
+                <p>
+                    <i>Se considera que la Velocidad inicial es cero.</i>
                 </p>
             </div>
-            <div class="datos">
+            <div class="Datos">
+                <div class="Altura">
+                    <p>
+                        <label for="altura">H:</label>
+                        <input id="altura" type="number" max="100000" min="0" name="altura"/>
+                        <label for="altura">[m]</label>
+                    </p>
+                </div>
+                <div class="Gravedad">
+                    <p>
+                        <label for="gravedad">g:</label>
+                        <input id="gravedad" type="number" max="100000" min="0" name="gravedad"/>
+                        <label for="gravedad">[m/seg^2]</label>
+                    </p>
+                </div>
+
+                <div class="VelocidadFinal">
+                    <p>
+                        <label for="velocidadFinal">V:</label>
+                        <input id="velocidadFinal" type="number" max="100000" min="0" name="velocidadFinal"/>
+                        <label for="velocidadFinal">[m/s]</label>
+                    </p>
+                </div>
+            </div>
+            <div class="Resultado">
                 <p>
-                    datos...
+                    <button class="button" name="calcular" type="button">Calcular</button>
                 </p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="dibujoEjercicio">
-    <img src="imagenes/ejercicio.jpg" alt="ejercicio">
-</section>
-
+<canvas id="imgEjercicio">
+    Your browser does not support the HTML5 canvas tag.
+</canvas>
 
 <footer>
     <div class="contenidoFooter">
         <div class="contacto">
-            <h4>Name</h4>
+            <h4>Nombre</h4>
             <p>Belen Aguilar</p>
         </div>
         <div class="mail">
