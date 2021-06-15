@@ -9,6 +9,19 @@ body {
     background-color: white;
 }
 
+#Ola {
+    height: 150px;
+    overflow: hidden;
+}
+#OlaOla{
+    height: 100%;
+    width: 100%;
+}
+#OlaOlaOla {
+    stroke: none;
+    fill: #ffffff;
+}
+
 .todo {
     padding: 60px 0;
     width: 90%;
