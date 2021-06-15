@@ -1,7 +1,7 @@
 /**
  * Calcula la altura del edificio segun los datos ingresados por el usuario
  * (Velocidad incial, Tiempo, Gravedad)
- * @method calcularVoltaje
+ * @method calcularAltura
  */
 
 function calcularAltura()
