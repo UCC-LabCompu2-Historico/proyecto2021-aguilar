@@ -6,6 +6,7 @@
 
 body {
     font-family: 'Tajawal', sans-serif;
+    background-color: white;
 }
 
 .todo {
@@ -14,9 +15,10 @@ body {
     max-width: 1000px;
     margin: auto;
     overflow: hidden;
-}
 
-.titulo {
+}
+/* Correccion estilo por id # */
+#TituloConcepto, #TituloFormula {
     color: black;
     font-size: 30px;
     text-align: center;
@@ -113,13 +115,15 @@ header .CaidaLibreHeader {
     padding: 2%;
 }
 
-.ElProblema{
+/* Correccion estilo por id # */
+#Problema{
     padding: 60px 0;
     width: 80%;
     max-width: 700px;
     margin: auto;
     overflow: hidden;
     text-align: center;
+    line-height: 200%;
 }
 .Datos, .enunciado p{
     padding: 5px;
@@ -136,8 +140,8 @@ input {
 label{
     font-weight: bold;
 }
-
-button {
+/* Correccion estilo por id # */
+#botonResultado {
     width: 200px;
     height: 40px;
     margin: 40px 5px 5px 5px;
@@ -151,29 +155,21 @@ button {
     cursor: pointer;
 }
 
-.button:active {
+#botonResultado:active {
     font-weight: bold;
 }
 
-button:link, button:visited {
+#botonResultado:link, #botonResultado:visited {
     font-weight: 300;
     text-decoration: none;
 }
 
-button:hover {
+#botonResultado:hover {
     text-decoration: blink;
     font-size: 1.2em;
 }
 
-canvas{
-    margin: 20px auto;
-    display: block;
-    width: 500px;
-    height: 250px;
-    border: 1px solid #000000;
-}
-
-.contenidoFooter {
+#DatosPersonales {
     background-color: #2b2929;
     color: #726a6a;
     padding: 1%;
@@ -182,3 +178,16 @@ canvas{
 .contenidoFooter p {
     padding: 0.5% 0;
 }
+
+
+#imgEjercicio{
+    margin: 20px auto;
+    display: block;
+    width: 500px;
+    height: 250px;
+    border: 1px solid #000000;
+}
+
+
+
+
