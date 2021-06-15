@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="imagenes/ucc.png">
     <link rel="stylesheet" href="miEstilo.css" type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2? family = Tajawal & display = swap" rel="hoja de estilo ">
+    <script type="text/javascript" src="Funciones.js"></script>
 
     <title>Caída Libre</title>
 </head>
@@ -41,40 +41,44 @@
         <div class="problema">
             <div class="enunciado">
                 <p>
-                    Se deja caer un objeto desde una altura determinada.Para <b>calcular el tiempo</b> que tarda
-                    en caer el objeto, usted debera ingresar <b>H</b> (Altura),<b>g</b> (Gravedad) y la <b>V</b> (Velocidad Final).
+                    Se deja caer un objeto de un edificio. Para <b>calcular la altura del edificio</b>
+                    usted debera ingresar <b>V<sub>o</sub></b> (Velocidad Inicial),<b>g</b> (Gravedad) y el <b>t</b>
+                    (tiempo) que tarda en caer el objeto.
                 </p>
-                <p>
-                    <i>Se considera que la Velocidad inicial es cero.</i>
+                <p id="Advertencia">
+                    <i>Se considera que la Altura inicial <b>H<sub>o</sub></b> es cero. Por un estudio de campo
+                        realizado en la ciudad, se establece que los edificios no tienen una altura superior a 200m.
+                        Por lo cual se recomienda que la velocidad inicial con la que se deja caer el objeto no supere los 51.1 m/seg
+                        y la gravedad los 10 m/seg<sup>2</sup></i>
                 </p>
             </div>
             <div class="Datos">
-                <div class="Altura">
+                <div class="VelocidadInicial">
                     <p>
-                        <label for="altura">H:</label>
-                        <input id="altura" type="number" max="100000" min="0" name="altura"/>
-                        <label for="altura">[m]</label>
+                        <label for="velocidadInicial">V<sub>o</sub>:</label>
+                        <input id="velocidadInicial" type="number" max="51.5" min="0" name="velocidadInicial" />
+                        <label for="velocidadInicial">[m/seg]</label>
                     </p>
                 </div>
                 <div class="Gravedad">
                     <p>
                         <label for="gravedad">g:</label>
-                        <input id="gravedad" type="number" max="100000" min="0" name="gravedad"/>
+                        <input id="gravedad" type="number" max="10" min="9.80" name="gravedad" />
                         <label for="gravedad">[m/seg<sup>2</sup>]</label>
                     </p>
                 </div>
 
                 <div class="VelocidadFinal">
                     <p>
-                        <label for="velocidadFinal">V:</label>
-                        <input id="velocidadFinal" type="number" max="100000" min="0" name="velocidadFinal"/>
-                        <label for="velocidadFinal">[m/s]</label>
+                        <label for="Tiempo">t:</label>
+                        <input id="tiempo" type="number" max="3" min="0" name="tiempo"/>
+                        <label for="tiempo">[seg]</label>
                     </p>
                 </div>
             </div>
             <div class="Resultado">
                 <p>
-                    <button class="button" id = "botonResultado" name="calcular" type="button">Calcular</button>
+                    <button class="button" id = "botonResultado" name="calcular" type="button" onclick="calcularAltura()">Calcular Altura</button><span id="Altura"></span>
                 </p>
             </div>
         </div>

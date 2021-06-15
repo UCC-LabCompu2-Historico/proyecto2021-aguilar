@@ -138,6 +138,9 @@ header .CaidaLibreHeader {
     text-align: center;
     line-height: 200%;
 }
+#Advertencia {
+    line-height: 150%;
+}
 .Datos, .enunciado p{
     padding: 5px;
     text-align: left;
@@ -155,8 +158,8 @@ label{
 }
 /* Correccion estilo por id # */
 #botonResultado {
-    width: 200px;
-    height: 40px;
+    width: 300px;
+    height: 45px;
     margin: 40px 5px 5px 5px;
     background: linear-gradient(45deg, lightblue, rgba(70, 198, 227, 0.91));
     border: none;
@@ -181,6 +184,7 @@ label{
     text-decoration: blink;
     font-size: 1.2em;
 }
+
 
 #DatosPersonales {
     background-color: #2b2929;
