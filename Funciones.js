@@ -99,9 +99,10 @@ function dibujarEdificio(gravedad,tiempo,velocidadI)
     var alto = ((velocidadI*tiempo) + 0.5 * gravedad * tiempo^2);
 
     //Dibujo edificio
+    // el ancho del edificio se calcula a partir de la altura dividido 4
     ctx.beginPath();
     ctx.fillStyle = "#5c1807";
-    ctx.fillRect(xMax-150,yMax/2.5,40,alto*1 );
+    ctx.fillRect(xMax-150,yMax/2.5,alto/4,alto*1 );
 
     ctx.stroke();
     ctx.closePath();
