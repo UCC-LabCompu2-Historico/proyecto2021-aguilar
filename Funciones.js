@@ -44,3 +44,32 @@ function calcularAltura()
         document.getElementById("Altura").innerHTML = ((Vi*T) + 0.5 * G * T^2) + " [m]";
     }
 }
+
+/**
+* Dibuja el edificio desde el que se deja caer un objeto en caida libre
+* @method dibujarEdificio
+* @param {number} valorAltura - La altura del edificio calculada a partir de los datos que ingreso el usuario
+*/
+
+function dibujarEdificio(valorAltura)
+{
+    var canvas = document.getElementById("imgEjercicio");
+    var ctx = canvas.getContext("2d");
+
+    canvas.width = canvas.width;
+
+    var xMax = canvas.width;
+    var yMax = canvas.height;
+
+    //Dibujo edificio
+    ctx.beginPath();
+    ctx.fillStyle = "#126629";
+    ctx.fillRect(xMax/2 - 25,yMax/2,50, 100 );
+
+    ctx.arc(xMax/2 + 30,yMax/2,5,0,2*Math.PI);
+    ctx.stroke();
+    ctx.fillStyle = "#a13718"
+    ctx.fill();
+    ctx.closePath();
+    
+}

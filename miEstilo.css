@@ -157,7 +157,7 @@ label{
     font-weight: bold;
 }
 /* Correccion estilo por id # */
-#botonResultado {
+#botonResultado, #botonGrafico {
     width: 300px;
     height: 45px;
     margin: 40px 5px 5px 5px;
@@ -171,16 +171,16 @@ label{
     cursor: pointer;
 }
 
-#botonResultado:active {
+#botonResultado:active, #botonGrafico:active{
     font-weight: bold;
 }
 
-#botonResultado:link, #botonResultado:visited {
+#botonResultado:link, #botonResultado:visited, #botonGrafico:link, #botonGrafico:visited  {
     font-weight: 300;
     text-decoration: none;
 }
 
-#botonResultado:hover {
+#botonResultado:hover, #botonGrafico:hover {
     text-decoration: blink;
     font-size: 1.2em;
 }
