@@ -62,12 +62,46 @@ function dibujarEdificio(gravedad,tiempo,velocidadI)
     var yMax = canvas.height;
 
     canvas.width = canvas.width;
+
+    Vi = document.getElementById("velocidadInicial").value;
+    T = document.getElementById("tiempo").value;
+    G = document.getElementById("gravedad").value;
+
+    // se vuelven a mostrar las alertas ya que se puede graficar sin la necesidad de calcular la altura
+    if(velocidadI == "" || tiempo == "" || gravedad == "") {
+        alert("No ingreso todos los datos");
+    }
+    else if(velocidadI <= 0 || tiempo <= 0 || gravedad <= 0){
+        alert("Los valores deben ser positivos");
+        document.getElementById("velocidadInicial").value = "";
+        document.getElementById("tiempo").value = "";
+        document.getElementById("gravedad").value = "";
+    }
+    else if(velocidadI > 51.5 || tiempo > 3 || gravedad < 9.80 || gravedad > 10){
+        alert("Valores invalidos, ingresar nuevamente");
+        document.getElementById("velocidadInicial").value = "";
+        document.getElementById("tiempo").value = "";
+        document.getElementById("gravedad").value = "";
+    }
+    else if(velocidadI > 51.5) {
+        alert("Ingrese una velocidad inicial positiva menor o igual a 51.5");
+        document.getElementById("velocidadInicial").value = "";
+    }
+    else if(tiempo > 3) {
+        alert("Ingrese un valor para el tiempo positivo  menor o igual a 3")
+        document.getElementById("tiempo").value = "";
+    }
+    else if(gravedad < 9.80 || gravedad > 10)
+    {
+        alert("Ingrese una gravedad entre 9.8 y 10 ");
+        document.getElementById("gravedad").value = "";
+    }
     var alto = ((velocidadI*tiempo) + 0.5 * gravedad * tiempo^2);
 
     //Dibujo edificio
     ctx.beginPath();
-    ctx.fillStyle = "#126629";
-    ctx.fillRect(xMax/2,yMax/2,20,alto*1 );
+    ctx.fillStyle = "#5c1807";
+    ctx.fillRect(xMax-150,yMax/2.5,40,alto*1 );
 
     ctx.stroke();
     ctx.closePath();
