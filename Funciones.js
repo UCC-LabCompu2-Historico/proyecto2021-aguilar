@@ -48,28 +48,29 @@ function calcularAltura()
 /**
 * Dibuja el edificio desde el que se deja caer un objeto en caida libre
 * @method dibujarEdificio
-* @param {number} valorAltura - La altura del edificio calculada a partir de los datos que ingreso el usuario
-*/
+* @param gravedad - La gravedad ingresada por el usuario
+ * @param tiempo - El tiempo que tarda en caer el objeto, ingresado por el usuario
+ * @param velocidadI - La veocidad inicial ingresada por el usuario
+ */
 
-function dibujarEdificio(valorAltura)
+function dibujarEdificio(gravedad,tiempo,velocidadI)
 {
     var canvas = document.getElementById("imgEjercicio");
     var ctx = canvas.getContext("2d");
 
-    canvas.width = canvas.width;
-
     var xMax = canvas.width;
     var yMax = canvas.height;
+
+    canvas.width = canvas.width;
+    var alto = ((velocidadI*tiempo) + 0.5 * gravedad * tiempo^2);
 
     //Dibujo edificio
     ctx.beginPath();
     ctx.fillStyle = "#126629";
-    ctx.fillRect(xMax/2 - 25,yMax/2,50, 100 );
+    ctx.fillRect(xMax/2,yMax/2,20,alto*1 );
 
-    ctx.arc(xMax/2 + 30,yMax/2,5,0,2*Math.PI);
     ctx.stroke();
-    ctx.fillStyle = "#a13718"
-    ctx.fill();
     ctx.closePath();
-    
+
 }
+
