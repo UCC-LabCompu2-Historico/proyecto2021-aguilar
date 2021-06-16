@@ -103,8 +103,14 @@ function dibujarEdificio(gravedad,tiempo,velocidadI)
     ctx.beginPath();
     ctx.fillStyle = "#5c1807";
     ctx.fillRect(130,yMax-alto,50,alto*1 );
-
     ctx.stroke();
+    ctx.closePath();
+    //Dibujo objeto
+    ctx.beginPath();
+    ctx.arc(190,yMax-alto,5,0,2*Math.PI);
+    ctx.stroke();
+    ctx.fillStyle = "#64c233"
+    ctx.fill();
     ctx.closePath();
 
 }
