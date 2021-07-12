@@ -123,17 +123,21 @@ header .CaidaLibreHeader {
     text-align: justify;
     line-height: 1.3;
 }
+#Formula1, #Formula2, #Formula3{
+    text-align: center;
+    line-height: 3;
+    letter-spacing: 3px;
+    font-family: Modern Roman;
+    font-weight: bolder;
+    font-size: 30px;
+}
 
-.hoverGaleria p {
-    width: 90%;
-    align-items: center;
-    justify-content: center;
+#AclaracionFormulas {
+    padding-top: 50px;
     text-align: justify;
 }
 
-.hoverGaleria img {
-    padding: 40px;
-}
+
 #SubtituloAceleracion, #SubtituloQueEs{
     width: 500px;
     height: 35px;
