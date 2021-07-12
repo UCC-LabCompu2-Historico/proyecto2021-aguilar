@@ -138,12 +138,9 @@ header .CaidaLibreHeader {
     text-align: center;
     line-height: 200%;
 }
-#Advertencia {
-    line-height: 150%;
-}
 .Datos, .enunciado p{
     padding: 5px;
-    text-align: left;
+    text-align: justify;
 }
 
 input {
