@@ -57,23 +57,39 @@
                 <div class="VelocidadInicial">
                     <p>
                         <label for="velocidadInicial">V<sub>o</sub>:</label>
-                        <input id="velocidadInicial" type="number" max="51.5" min="0" name="velocidadInicial" />
-                        <label for="velocidadInicial">[m/seg]</label>
+                        <input id="velocidadInicial" type="number" max="100" min="0" name="velocidadInicial" />
+                        <label for="velocidadInicial">
+                            <select id="UnidadesVelocidadInicial" >
+                                <option>m/s</option>
+                                <option>cm/s</option>
+                                <option>km/h</option>
+                            </select>
+                        </label>
                     </p>
                 </div>
                 <div class="Gravedad">
                     <p>
                         <label for="gravedad">g: </label>
-                        <input id="gravedad" type="number" max="10" min="9.80" name="gravedad" />
-                        <label for="gravedad">[m/seg<sup>2</sup>]</label>
+                        <input id="gravedad" type="number" name="gravedad" />
+                        <label for="gravedad">
+                            <select id ="UnidadesGravedad" >
+                                <option>m/s<sup>2</sup></option>
+                            </select>
+                        </label>
                     </p>
                 </div>
 
-                <div class="VelocidadFinal">
+                <div class="Tiempo">
                     <p>
                         <label for="Tiempo">t: </label>
-                        <input id="tiempo" type="number" max="3" min="0" name="tiempo"/>
-                        <label for="tiempo">[seg]</label>
+                        <input id="tiempo" type="number" max="50" min="0" name="tiempo"/>
+                        <label for="tiempo">
+                            <select id = "UnidadesTiempo">
+                                <option>s</option>
+                                <option>min</option>
+                                <option>h</option>
+                            </select>
+                        </label>
                     </p>
                 </div>
             </div>

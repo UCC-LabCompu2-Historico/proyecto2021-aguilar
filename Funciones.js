@@ -31,12 +31,12 @@ function calcularAltura() {
         alert("El tiempo debe tener un valor positivo");
         document.getElementById("tiempo").value = "";
     }
-    else if (G < 9.8 || G > 10) {
+    else if (G !== 9.8) {
         alert("El valor de la gravedad es incorrecto");
         document.getElementById("gravedad").value = "";
     }
-
     else {
+
         document.getElementById("Altura").innerHTML = ((Vi * T) + 0.5 * G * T ^ 2) + " [m]";
     }
 }

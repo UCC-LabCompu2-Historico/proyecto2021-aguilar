@@ -150,8 +150,6 @@ header .CaidaLibreHeader {
     color: #000000;
 
 }
-
-
 /* Correccion estilo por id # */
 #Problema{
     padding: 60px 0;
@@ -228,5 +226,18 @@ label{
     border: 1px solid #000000;
 }
 
+#UnidadesVelocidadInicial, #UnidadesTiempo, #UnidadesGravedad{
+    width: 55px;
+    height: 20px;
+    margin: 4px 2px 2px 2px;
+    background: linear-gradient(45deg, rgba(86, 213, 245, 0.56), rgba(253, 252, 252, 0.8));
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: normal;
+    color: #000000;
+    cursor: pointer;
+}
 
 
