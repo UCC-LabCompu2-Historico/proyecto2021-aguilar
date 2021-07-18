@@ -5,53 +5,61 @@
  */
 
 function calcularAltura() {
-    var Vi, T, G;
 
+    var Vi, T, G;
+    var uVi, uT;
+    var altura;
+
+    /** Nombro las variables segun los datos que pedi que ingrese el usuario */
     Vi = document.getElementById("velocidadInicial").value;
     T = document.getElementById("tiempo").value;
     G = document.getElementById("gravedad").value;
 
+    /** El usuario decide las unidades de los datos que ingresa */
+    uVi = document.getElementById("UnidadesVelocidadInicial").value;
+    uT = document.getElementById("UnidadesTiempo").value;
+
+
+    /** Alertas en caso que los datos ingresados no sean validos*/
     if (Vi === "") {
         alert("Debe ingresar la Velocidad Inicial");
         document.getElementById("velocidadInicial").value = "";
-    }
-    else if(G === ""){
+    } else if (G === "") {
         alert("Presionar nuevamente Calcular Altura")
         document.getElementById("gravedad").value = 9.8;
-    }
-    else if(T === ""){
+    } else if (T === "") {
         alert("Debe ingresar el Tiempo");
         document.getElementById("tiempo").value = "";
-    }
-    else if (Vi <= 0) {
-        alert("La Velocidad Inicial debe tener un valor positivo");
+    } else if (Vi <= 0) {
+        alert("La Velocidad Inicial debe tener un valor mayor a cero");
         document.getElementById("velocidadInicial").value = "";
-    }
-    else if (T <= 0) {
-        alert("El tiempo debe tener un valor positivo");
+    } else if (T <= 0) {
+        alert("El tiempo debe tener un valor mayor a cero");
         document.getElementById("tiempo").value = "";
-    }
-    else if (G !== 9.8) {
-        alert("El valor de la gravedad es incorrecto");
+    } else if (G != 9.8) {
+        alert("El valor correcto de la gravedad es de 9.8");
         document.getElementById("gravedad").value = "";
     }
-    else {
 
-        document.getElementById("Altura").innerHTML = ((Vi * T) + 0.5 * G * T ^ 2) + " [m]";
+
+    /** Calculo de la altura segun las unidades elegidas */
+    else if (Vi > 0 && T > 0) {
+        if (uVi == "cm/s") {
+            Vi = Vi / 100;
+        }
+        else if (uVi == "km/h") {
+            Vi = Vi / 3.6;
+        }
+        if (uT == "h") {
+            T = T / 3600;
+        }
+        else if (uT == "min") {
+            T = T * 60;
+        }
+        altura = ((Vi * T) + (0.5 * G * Math.pow(T,2))).toFixed(2);
+        document.getElementById("botonResultado").innerHTML = altura + " [m]";
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 /**
  * Dibuja el edificio desde el que se deja caer un objeto en caida libre
  * @method dibujarEdificio
@@ -60,7 +68,8 @@ function calcularAltura() {
  * @param velocidadI - La veocidad inicial ingresada por el usuario
  */
 
-function dibujarEdificio(gravedad, tiempo, velocidadI) {
+
+ function dibujarEdificio(gravedad, tiempo, velocidadI) {
     var canvas = document.getElementById("imgEjercicio");
     var ctx = canvas.getContext("2d");
 
@@ -69,33 +78,12 @@ function dibujarEdificio(gravedad, tiempo, velocidadI) {
 
     canvas.width = canvas.width;
 
-    Vi = document.getElementById("velocidadInicial").value;
-    T = document.getElementById("tiempo").value;
-    G = document.getElementById("gravedad").value;
 
-    // se vuelven a mostrar las alertas ya que se puede graficar sin la necesidad de calcular la altura
-    if (velocidadI === "" || tiempo === "" || gravedad === "") {
-        alert("No ingreso todos los datos");
-    } else if (velocidadI <= 0 || tiempo <= 0 || gravedad <= 0) {
-        alert("Los valores deben ser positivos");
-        document.getElementById("velocidadInicial").value = "";
-        document.getElementById("tiempo").value = "";
-        document.getElementById("gravedad").value = "";
-    } else if (velocidadI > 51.5 || tiempo > 3 || gravedad < 9.80 || gravedad > 10) {
-        alert("Valores invalidos, ingresar nuevamente");
-        document.getElementById("velocidadInicial").value = "";
-        document.getElementById("tiempo").value = "";
-        document.getElementById("gravedad").value = "";
-    } else if (velocidadI > 51.5) {
-        alert("Ingrese una velocidad inicial positiva menor o igual a 51.5");
-        document.getElementById("velocidadInicial").value = "";
-    } else if (tiempo > 3) {
-        alert("Ingrese un valor para el tiempo positivo  menor o igual a 3")
-        document.getElementById("tiempo").value = "";
-    } else if (gravedad < 9.80 || gravedad > 10) {
-        alert("Ingrese una gravedad entre 9.8 y 10 ");
-        document.getElementById("gravedad").value = "";
-    }
+
+
+
+
+
     var alto = ((velocidadI * tiempo) + 0.5 * gravedad * tiempo ^ 2);
 
     //Dibujo edificio
