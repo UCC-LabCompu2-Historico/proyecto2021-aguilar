@@ -73,6 +73,9 @@ function calcularAltura() {
     var canvas = document.getElementById("imgEjercicio");
     var ctx = canvas.getContext("2d");
 
+    
+
+
     var xMax = canvas.width;
     var yMax = canvas.height;
 
