@@ -73,9 +73,6 @@ function dibujarEdificio(gravedad, tiempo, velocidadI) {
     var img = new Image();
     img.src = "imagenes/ciudadColores.jpg"
 
-    var pelota = new Image();
-    pelota.src = "imagenes/pelota.png"
-
     var xMax = canvas.width;
     var yMax = canvas.height;
 
@@ -148,7 +145,7 @@ function dibujarEdificio(gravedad, tiempo, velocidadI) {
 
         //Dibujar ventanas
         ctx.beginPath();
-        for(var i = yMax; i > yMax - alto;)
+        for(var i = yMax + 2; i > yMax - alto + 4;)
         {
             ctx.moveTo(135,i);
             ctx.lineTo(((alto / 3.5) - 10) + 135,i);
@@ -159,9 +156,32 @@ function dibujarEdificio(gravedad, tiempo, velocidadI) {
         }
         ctx.closePath();
 
-        //Dibujo objeto
-        ctx.drawImage(pelota, 130 + (alto / 3), yMax - alto, 6, 6);
+    }
+}
 
+x = 130 + (alto / 3);
+dx = 3;
+function animarPelota()
+{
+
+    var canvas = document.getElementById("imgEjercicio");
+    var ctx = canvas.getContext("2d");
+
+    canvas.width = canvas.width;
+
+    var pelota = new Image();
+    pelota.src = "imagenes/pelota1.png"
+
+    var xMax = canvas.width;
+    var yMax = canvas.height;
+
+    pelota.onload = function ()
+    {
+        ctx.drawImage(pelota, 130 + (alto / 3), yMax - alto, 6, 6);
     }
 
+    if(x > canvas.width){
+        x = 130 + (alto / 3);
+    }
+    x += dx;
 }
