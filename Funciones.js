@@ -82,7 +82,7 @@ function dibujarEdificio(gravedad, tiempo, velocidadI) {
     canvas.width = canvas.width;
 
 
-    //Calculo la altura del edificio 
+    //Calculo la altura del edificio
 
     Vi = document.getElementById("velocidadInicial").value;
     T = document.getElementById("tiempo").value;
