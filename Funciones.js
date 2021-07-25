@@ -141,23 +141,27 @@ function dibujarEdificio(gravedad, tiempo, velocidadI) {
         // el ancho del edificio se calcula a partir de la altura dividido 4
 
         ctx.beginPath();
-        ctx.fillStyle = "#711f09";
+        ctx.fillStyle = "#92270a";
         ctx.fillRect(130, yMax - alto, alto / 3.5, alto * 1);
         ctx.stroke();
+        ctx.closePath();
+
+        //Dibujar ventanas
+        ctx.beginPath();
+        for(var i = yMax; i > yMax - alto;)
+        {
+            ctx.moveTo(135,i);
+            ctx.lineTo(((alto / 3.5) - 10) + 135,i);
+            ctx.lineWidth = 4;
+            ctx.strokeStyle="#636161";
+            ctx.stroke();
+            i = i - 7;
+        }
         ctx.closePath();
 
         //Dibujo objeto
         ctx.drawImage(pelota, 130 + (alto / 3), yMax - alto, 6, 6);
 
     }
-
-    /** ctx.beginPath();
-     ctx.arc(190, yMax - alto, 5, 0, 2 * Math.PI);
-     ctx.stroke();
-     ctx.fillStyle = "#64c233"
-     ctx.fill();
-     ctx.closePath();
-     */
-
 
 }
