@@ -188,19 +188,20 @@ label{
     font-weight: bold;
     color: #000000;
     cursor: pointer;
+    align-content: center;
 }
 #RecargarPagina {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     margin: 40px 2px 2px 2px;
     background: #ffffff;
     border: none;
     text-align: center;
-    font-size: 16px;
+    font-size: 26px;
     cursor: pointer;
 }
 
-#botonResultado:active, #botonGrafico, #RecargarPagina:active{
+#botonResultado:active, #botonGrafico:active, #RecargarPagina:active{
     font-weight: bold;
 }
 
@@ -209,11 +210,10 @@ label{
     text-decoration: none;
 }
 
-#botonResultado:hover, #botonGrafico, #RecargarPagina:hover {
+#botonResultado:hover, #botonGrafico:hover, #RecargarPagina:hover {
     text-decoration: blink;
     font-size: 1.2em;
 }
-
 
 #DatosPersonales {
     background-color: #000000;
