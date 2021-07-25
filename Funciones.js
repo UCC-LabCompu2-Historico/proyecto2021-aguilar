@@ -127,12 +127,12 @@ function dibujarEdificio(gravedad, tiempo, velocidadI) {
         var alto = ((Vi * T) + (0.5 * G * Math.pow(T, 2))).toFixed(2);
     }
 
-    if (alto > 170) {
+    if (alto > 145) {
         alert("La altura del edificio no cumple con los reglamentos de la ciudad. Ingrese los datos nuevamente");
         Vi = document.getElementById("velocidadInicial").value = "";
         T = document.getElementById("tiempo").value = "";
         G = document.getElementById("gravedad").value = "";
-    } else if (alto <= 170) {
+    } else if (alto <= 145) {
 
         //Pongo imagen de fondo
         ctx.drawImage(img, 0, 0, xMax, yMax);
