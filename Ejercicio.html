@@ -10,15 +10,15 @@
 
     <link rel="shortcut icon" href="imagenes/ucc.png">
     <link rel="stylesheet" href="miEstilo.css" type="text/css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
     <script type="text/javascript" src="Funciones.js"></script>
 
     <title>Caída Libre</title>
 </head>
 
-// REVISAAAAAAAAAAAAR
-
-<body onload="setInterval(animarPelota,3000)">
+<body>
 
 <header>
     <nav>
@@ -107,11 +107,11 @@
                 </p>
                 <p>
                     <button type="button" class="botonGrafico" id="botonGrafico"
-                            onclick="dibujarEdificio(gravedad.value,tiempo.value,velocidadInicial.value)">Graficar
+                            onclick="funciones(gravedad.value,tiempo.value,velocidadInicial.value)">Graficar
                     </button>
                 </p>
                 <p>
-                    <button id="RecargarPagina" type="button"  onclick="location.reload()">
+                    <button id="RecargarPagina" type="button" onclick="location.reload()">
                         &#128260
                     </button>
                 </p>
@@ -120,10 +120,10 @@
     </div>
 </section>
 
-
 <canvas id="imgEjercicio">
     Your browser does not support the HTML5 canvas tag.
 </canvas>
+
 
 <div id="OlaFooter" class="waves">
     <svg id="OlaOlaFooter" viewBox="0 0 1440 320" preserveAspectRatio="none">
@@ -135,12 +135,8 @@
 </div>
 <footer id="DatosPersonales">
     <div class="contenidoFooter">
-        <div class="contacto">
-            <h4>Nombre</h4>
-            <p>Belen Aguilar</p>
-        </div>
         <div class="mail">
-            <h4>Mail</h4>
+            <h4>Contact</h4>
             <p>belenaguiilarv@gmail.com</p>
         </div>
     </div>

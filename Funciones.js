@@ -1,3 +1,12 @@
+/** Variables globales
+ * @type {number}
+ * alto = altura edificio
+
+var alto = 0;
+x = 130 + (alto / 3);
+dx = 3;
+*/
+
 /**
  * Calcula la altura del edificio segun los datos ingresados por el usuario
  * (Velocidad incial, Tiempo, Gravedad)
@@ -57,7 +66,20 @@ function calcularAltura() {
         document.getElementById("botonResultado").innerHTML = altura + " [m]";
     }
 }
+/**
+ * Funcion que llama a las 2 funciones de edificio y pelota
+ * @method funciones
+ * @param gravedad - La gravedad ingresada por el usuario
+ * @param tiempo - El tiempo que tarda en caer el objeto, ingresado por el usuario
+ * @param velocidadI - La veocidad inicial ingresada por el usuario
+ */
+function funciones(gravedad,tiempo,velocidadI)
+{
 
+    dibujarEdificio(gravedad,tiempo,velocidadI);
+    dibujarPelota();
+
+}
 
 /**
  * Dibuja el edificio desde el que se deja caer un objeto en caida libre
@@ -70,17 +92,12 @@ function dibujarEdificio(gravedad, tiempo, velocidadI) {
     var canvas = document.getElementById("imgEjercicio");
     var ctx = canvas.getContext("2d");
 
-    var img = new Image();
-    img.src = "imagenes/ciudadColores.jpg"
-
     var xMax = canvas.width;
     var yMax = canvas.height;
 
     canvas.width = canvas.width;
 
-
     //Calculo la altura del edificio
-
     Vi = document.getElementById("velocidadInicial").value;
     T = document.getElementById("tiempo").value;
     G = document.getElementById("gravedad").value;
@@ -88,7 +105,6 @@ function dibujarEdificio(gravedad, tiempo, velocidadI) {
     uT = document.getElementById("UnidadesTiempo").value;
 
     ///Alertas
-
     if (Vi === "") {
         alert("Debe ingresar la Velocidad Inicial");
         document.getElementById("velocidadInicial").value = "";
@@ -109,7 +125,7 @@ function dibujarEdificio(gravedad, tiempo, velocidadI) {
         document.getElementById("gravedad").value = "";
     }
 
-    /**  Calculo*/
+    //Calculo
     else if (Vi > 0 && T > 0) {
         if (uVi == "cm/s") {
             Vi = Vi / 100;
@@ -121,7 +137,7 @@ function dibujarEdificio(gravedad, tiempo, velocidadI) {
         } else if (uT == "min") {
             T = T * 60;
         }
-        var alto = ((Vi * T) + (0.5 * G * Math.pow(T, 2))).toFixed(2);
+        alto = ((Vi * T) + (0.5 * G * Math.pow(T, 2))).toFixed(2);
     }
 
     if (alto > 145) {
@@ -156,32 +172,30 @@ function dibujarEdificio(gravedad, tiempo, velocidadI) {
         }
         ctx.closePath();
 
+
     }
 }
-
-x = 130 + (alto / 3);
-dx = 3;
-function animarPelota()
+function dibujarPelota()
 {
-
     var canvas = document.getElementById("imgEjercicio");
     var ctx = canvas.getContext("2d");
 
-    canvas.width = canvas.width;
-
-    var pelota = new Image();
-    pelota.src = "imagenes/pelota1.png"
-
-    var xMax = canvas.width;
     var yMax = canvas.height;
 
-    pelota.onload = function ()
-    {
-        ctx.drawImage(pelota, 130 + (alto / 3), yMax - alto, 6, 6);
-    }
+    canvas.width = canvas.width;
 
-    if(x > canvas.width){
-        x = 130 + (alto / 3);
-    }
-    x += dx;
+    ctx.beginPath();
+    ctx.arc(130 + (alto / 3), yMax - alto, 2, 0, 2*Math.PI);
+    ctx.strokeStyle="#000000";
+    ctx.stroke();
+    ctx.closePath();
 }
+
+
+
+/**
+function animarPelota()
+{
+        setInterval(DibujarCirculo, 1000);
+}
+ */
