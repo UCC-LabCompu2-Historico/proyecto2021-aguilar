@@ -61,18 +61,18 @@ function calcularAltura() {
     }
 }
 
+
 /**
  * Dibuja el edificio desde el que se deja caer un objeto en caida libre
  * @method dibujarEdificio
  * @param gravedad - La gravedad ingresada por el usuario
  * @param tiempo - El tiempo que tarda en caer el objeto, ingresado por el usuario
  * @param velocidadI - La veocidad inicial ingresada por el usuario
- */
+
 function dibujarEdificio(gravedad, tiempo, velocidadI) {
     var canvas = document.getElementById("imgEjercicio");
     var ctx = canvas.getContext("2d");
 
-    var xMax = canvas.width;
     var yMax = canvas.height;
 
     canvas.width = canvas.width;
@@ -146,18 +146,17 @@ function dibujarEdificio(gravedad, tiempo, velocidadI) {
         ctx.closePath();
     }
 }
-
+*/
 
 
 /**
  * Dibuja el objeto que se deja caer
  * @method dibujarObjeto
- */
+
 function dibujarObjeto() {
     var canvas = document.getElementById("imgEjercicio");
     var ctx = canvas.getContext("2d");
 
-    var xMax = canvas.width;
     var yMax = canvas.height;
 
     // no borro canvas para que queden dibujados ambos objetos
@@ -213,5 +212,54 @@ function dibujarObjeto() {
         ctx.fillStyle = "#f00";
         ctx.fill();
         ctx.closePath();
+    }
+ }*/
+
+
+function animarObjeto(){
+    var canvas = document.getElementById("imgEjercicio");
+    var ctx = canvas.getContext("2d");
+
+    var yMax = canvas.height;
+    var posY = yMax - altura;
+
+    canvas.width = canvas.width;
+
+    if (altura <= 145) {
+
+        //Dibujo edificio
+        ctx.beginPath();
+        ctx.fillStyle = "#F0A843";
+        ctx.fillRect(130, yMax - altura, 50, altura * 1);
+        ctx.stroke();
+        ctx.closePath();
+
+        //Dibujar ventanas
+        ctx.beginPath();
+        for(var i = yMax + 2; i > yMax - altura + 4;)
+        {
+            ctx.moveTo(135,i);
+            ctx.lineTo(((150 / 3.6) - 1) + 135,i);
+            ctx.lineWidth = 4;
+            ctx.strokeStyle="#636161";
+            ctx.stroke();
+            i = i - 7;
+        }
+        ctx.closePath();
+
+        //Dibujo el objeto      se va a mover con un intervalo de tiempo
+        ctx.beginPath();
+        ctx.arc(115,posY*1,3,0,2*Math.PI);
+        ctx.fillStyle = "#f00";
+        ctx.fill();
+        ctx.closePath();
+
+        // NO SE MUEVE
+
+        if(posY < yMax){
+            posY = yMax - altura;
+        }else
+        posY+=3;
+
     }
 }
