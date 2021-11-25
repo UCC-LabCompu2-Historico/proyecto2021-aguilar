@@ -18,7 +18,7 @@
     <title>Caída Libre</title>
 </head>
 
-<body>
+<body>                                                    <!-- onload="setInterval(animarObjeto, 10)" -->
 
 <header>
     <nav>
@@ -101,7 +101,7 @@
 
             <div class="Resultado">
                 <p><button class="button" type="button" id="botonResultado" onclick="calcularAltura()">Calcular Altura</button></p>
-                <p><button type="button" class="botonGrafico" id="botonGrafico" onclick="ejecutar_dos_funciones(gravedad.value,tiempo.value,velocidadInicial.value)">Graficar</button></p>
+                <p><button type="button" class="botonGrafico" id="botonGrafico" onclick="dibujarEdificio(gravedad.value,tiempo.value,velocidadInicial.value); dibujarObjeto()">Graficar</button></p>
                 <p><button id="RecargarPagina" type="button" onclick="location.reload()">&#128260</button></p>
             </div>
         </div>

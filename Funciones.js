@@ -1,3 +1,6 @@
+
+var altura;
+
 /**
  * Calcula la altura del edificio segun los datos ingresados por el usuario
  * (Velocidad incial, Tiempo, Gravedad)
@@ -7,7 +10,7 @@ function calcularAltura() {
 
     var Vi, T, G;
     var uVi, uT;
-    var altura;
+    //var altura;
 
     /** Nombro las variables segun los datos que pedi que ingrese el usuario */
     Vi = document.getElementById("velocidadInicial").value;
@@ -57,13 +60,6 @@ function calcularAltura() {
         document.getElementById("botonResultado").innerHTML = altura + " [m]";
     }
 }
-
-function ejecutar_dos_funciones(gravedad, tiempo, velocidadI)
-{
-    dibujarEdificio(gravedad, tiempo, velocidadI);
-    dibujarObjeto();
-}
-
 
 /**
  * Dibuja el edificio desde el que se deja caer un objeto en caida libre
@@ -121,26 +117,24 @@ function dibujarEdificio(gravedad, tiempo, velocidadI) {
         } else if (uT == "min") {
             T = T * 60;
         }
-        alto = ((Vi * T) + (0.5 * G * Math.pow(T, 2))).toFixed(2);
+        altura = ((Vi * T) + (0.5 * G * Math.pow(T, 2))).toFixed(2);
     }
 
-    if (alto > 145) {
-        alert("La altura del edificio no cumple con los reglamentos de la ciudad. Ingrese los datos nuevamente");
-        Vi = document.getElementById("velocidadInicial").value = "";
-        T = document.getElementById("tiempo").value = "";
-        G = document.getElementById("gravedad").value = "";
-    } else if (alto <= 145) {
+    if (altura > 145) {
+        alert("La altura del edificio no cumple con los reglamentos de la ciudad. Recargue la pagina e ingrese los datos nuevamente");
+
+    } else if (altura <= 145) {
 
         //Dibujo edificio
         ctx.beginPath();
         ctx.fillStyle = "#F0A843";
-        ctx.fillRect(130, yMax - alto, 50, alto * 1);
+        ctx.fillRect(130, yMax - altura, 50, altura * 1);
         ctx.stroke();
         ctx.closePath();
 
         //Dibujar ventanas
         ctx.beginPath();
-        for(var i = yMax + 2; i > yMax - alto + 4;)
+        for(var i = yMax + 2; i > yMax - altura + 4;)
         {
             ctx.moveTo(135,i);
             ctx.lineTo(((150 / 3.6) - 1) + 135,i);
@@ -156,7 +150,7 @@ function dibujarEdificio(gravedad, tiempo, velocidadI) {
 
 
 /**
- * Dibuja elobjeto que se deja caer
+ * Dibuja el objeto que se deja caer
  * @method dibujarObjeto
  */
 function dibujarObjeto() {
@@ -166,7 +160,8 @@ function dibujarObjeto() {
     var xMax = canvas.width;
     var yMax = canvas.height;
 
-    canvas.width = canvas.width;
+    // no borro canvas para que queden dibujados ambos objetos
+    //canvas.width = canvas.width;
 
     //Calculo la altura del edificio
     Vi = document.getElementById("velocidadInicial").value;
@@ -208,18 +203,13 @@ function dibujarObjeto() {
         } else if (uT == "min") {
             T = T * 60;
         }
-        alto = ((Vi * T) + (0.5 * G * Math.pow(T, 2))).toFixed(2);
+        altura = ((Vi * T) + (0.5 * G * Math.pow(T, 2))).toFixed(2);
     }
+    if (altura <= 145) {
 
-    if (alto > 145) {
-        alert("La altura del edificio no cumple con los reglamentos de la ciudad. Ingrese los datos nuevamente");
-        Vi = document.getElementById("velocidadInicial").value = "";
-        T = document.getElementById("tiempo").value = "";
-        G = document.getElementById("gravedad").value = "";
-    } else if (alto <= 145) {
         //Dibujo el objeto
         ctx.beginPath();
-        ctx.arc(115,yMax - alto,3,0,2*Math.PI);
+        ctx.arc(115,yMax - altura,3,0,2*Math.PI);
         ctx.fillStyle = "#f00";
         ctx.fill();
         ctx.closePath();
