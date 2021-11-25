@@ -215,13 +215,13 @@ function dibujarObjeto() {
     }
  }*/
 
-
+var posY = 585 - altura;
 function animarObjeto(){
     var canvas = document.getElementById("imgEjercicio");
     var ctx = canvas.getContext("2d");
 
     var yMax = canvas.height;
-    var posY = yMax - altura;
+    //posY = yMax - altura;
 
     canvas.width = canvas.width;
 
@@ -256,10 +256,10 @@ function animarObjeto(){
 
         // NO SE MUEVE
 
-        if(posY < yMax){
+        if(posY > yMax){
             posY = yMax - altura;
         }else
-        posY+=3;
+        posY-=3;
 
     }
 }
