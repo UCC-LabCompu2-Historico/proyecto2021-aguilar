@@ -58,6 +58,11 @@ function calcularAltura() {
         }
         altura = ((Vi * T) + (0.5 * G * Math.pow(T, 2))).toFixed(2);
         document.getElementById("botonResultado").innerHTML = altura + " [m]";
+
+        if(altura > 145)
+        {
+            alert("La altura del edificio no cumple con los reglamentos de la ciudad. Recargue la pagina e ingrese los datos nuevamente");
+        }
     }
 }
 
@@ -215,51 +220,52 @@ function dibujarObjeto() {
     }
  }*/
 
-var posY = 585 - altura;
-function animarObjeto(){
+var posY = null;
+
+function animarObjeto() {
     var canvas = document.getElementById("imgEjercicio");
     var ctx = canvas.getContext("2d");
 
     var yMax = canvas.height;
-    //posY = yMax - altura;
 
     canvas.width = canvas.width;
 
+    if (posY == null)
+        posY = yMax - altura;
+        // console.log("yMax: "+yMax));
+        //console.log("altura: "+altura));
+        //console.log("Posicion Y inicial: "+posY));
+
     if (altura <= 145) {
-
         //Dibujo edificio
-        ctx.beginPath();
-        ctx.fillStyle = "#F0A843";
-        ctx.fillRect(130, yMax - altura, 50, altura * 1);
-        ctx.stroke();
-        ctx.closePath();
-
-        //Dibujar ventanas
-        ctx.beginPath();
-        for(var i = yMax + 2; i > yMax - altura + 4;)
-        {
-            ctx.moveTo(135,i);
-            ctx.lineTo(((150 / 3.6) - 1) + 135,i);
-            ctx.lineWidth = 4;
-            ctx.strokeStyle="#636161";
+            ctx.beginPath();
+            ctx.fillStyle = "#F0A843";
+            ctx.fillRect(130, yMax - altura, 50, altura * 1);
             ctx.stroke();
-            i = i - 7;
+            ctx.closePath();
+
+            //Dibujar ventanas
+            ctx.beginPath();
+            for (var i = yMax + 2; i > yMax - altura + 4;) {
+                ctx.moveTo(135, i);
+                ctx.lineTo(((150 / 3.6) - 1) + 135, i);
+                ctx.lineWidth = 4;
+                ctx.strokeStyle = "#636161";
+                ctx.stroke();
+                i = i - 7;
+            }
+            ctx.closePath();
+
+            // console.log("La bola va cayendo: "+Number(posY));
+            //Dibujo Objeto
+            ctx.beginPath();
+            ctx.arc(115, Number(posY), 3, 0, 2 * Math.PI);
+            ctx.fillStyle = "#f00";
+            ctx.fill();
+            ctx.closePath();
+
+            if (posY < yMax) {
+                posY += 0.5;
+            }
         }
-        ctx.closePath();
-
-        //Dibujo el objeto      se va a mover con un intervalo de tiempo
-        ctx.beginPath();
-        ctx.arc(115,posY*1,3,0,2*Math.PI);
-        ctx.fillStyle = "#f00";
-        ctx.fill();
-        ctx.closePath();
-
-        // NO SE MUEVE
-
-        if(posY > yMax){
-            posY = yMax - altura;
-        }else
-        posY-=3;
-
-    }
 }
